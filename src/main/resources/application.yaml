@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: xrp-payment-app
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://db:5432/xrpdb}
+    username: ${SPRING_DATASOURCE_USERNAME:xrpuser}
+    password: ${SPRING_DATASOURCE_PASSWORD:xrppassword}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate.default_schema: xrp_payment
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    table: xrp_payment_history_table
+    schemas: xrp_payment
+
+platform:
+  secret: ${XRPL_SENDER_SECRET:sEdTLXdEwVbptCMY8faV3A6o5q7XBhG}
+  address: ${XRPL_SENDER_ADDRESS:rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh}
+  sequence_number: ${XRPL_SEQUENCE_NUMBER:9572107}
+
+xrpl:
+  testnet:
+    ws-url: ${XRPL_TESTNET_WS_URL:wss://s.altnet.rippletest.net:51233}
+    http-url: ${XRPL_TESTNET_HTTP_URL:https://s.altnet.rippletest.net:51234/}

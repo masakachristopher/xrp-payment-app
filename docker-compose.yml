@@ -1,12 +1,42 @@
 version: '3.8'
 services:
-  app:
+  xrp-payment-app:
     build: .
     ports:
       - "8080:8080"
     environment:
-      - SPRING_APPLICATION_NAME=xrp-payment-app
-      - XRPL_TESTNET_WS_URL=wss://s.altnet.rippletest.net:51233
-      - XRPL_TESTNET_HTTP_URL=https://s.altnet.rippletest.net:51234
-      - XRPL_SENDER_ADDRESS=<YOUR_TESTNET_ADDRESS>
-      - XRPL_SENDER_SECRET=<YOUR_TESTNET_SECRET>
+      SPRING_APPLICATION_NAME: xrp-payment-app
+      XRPL_TESTNET_WS_URL: wss://s.altnet.rippletest.net:51233
+      XRPL_TESTNET_HTTP_URL: https://s.altnet.rippletest.net:51234/
+      XRPL_SENDER_ADDRESS: rHzQ7FCySRXGmf7woV2wvSLawJTfDbUfSr
+      XRPL_SENDER_SECRET: sEd7RsaBuEFFv9Y7BCbXr44BVtX5sQU
+      XRPL_SEQUENCE_NUMBER: "9572107"
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/xrpdb
+      SPRING_DATASOURCE_USERNAME: xrpuser
+      SPRING_DATASOURCE_PASSWORD: xrppassword
+      SPRING_DEVTOOLS_RESTART_ENABLED: "true"
+    depends_on:
+      - db
+    networks:
+      - service-network
+
+  db:
+    image: postgres:15
+    container_name: xrp-db
+    environment:
+      POSTGRES_DB: xrpdb
+      POSTGRES_USER: xrpuser
+      POSTGRES_PASSWORD: xrppassword
+    ports:
+      - "5432:5432"
+    volumes:
+      - xrp-data:/var/lib/postgresql/data
+    networks:
+      - service-network
+
+networks:
+  service-network:
+    name: service-network
+
+volumes:
+  xrp-data:
