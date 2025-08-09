@@ -8,7 +8,7 @@ WIP - Work In Progress
 ## Features
 
 - Secure key management (via Spring config or environment variables)
-- Send XRP payments (Partially Complete)
+- Send XRP payments (Complete)
 - Retrieve transaction status (Pending)
 - Fetch account balance (Pending)
 - Connect to Ripple Testnet (default)
