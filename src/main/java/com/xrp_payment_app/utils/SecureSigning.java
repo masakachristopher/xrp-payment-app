@@ -16,8 +16,8 @@ import org.xrpl.xrpl4j.model.transactions.XrpCurrencyAmount;
 public class SecureSigning {
 
     public static SingleSignedTransaction<Payment> signWithSeed(String sSecret, Payment payment) {
-        Seed seed = Seed.fromBase58EncodedSecret(Base58EncodedSecret.of(sSecret));
-        PrivateKey privateKey = seed.deriveKeyPair().privateKey();
+        ExtractKeyPair extractKeyPair = new ExtractKeyPair();
+        PrivateKey privateKey = extractKeyPair.deriveKeyPairFromSecret(sSecret).privateKey();
         SignatureService<PrivateKey> signatureService = new BcSignatureService();
         return signatureService.sign(privateKey, payment);
     }
