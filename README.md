@@ -8,11 +8,12 @@ WIP - Work In Progress
 ## Features
 
 - Secure key management (via Spring config or environment variables)
-- Send XRP payments (Complete)
-- Retrieve transaction status (Pending)
-- Fetch account balance (Pending)
+- Send XRP payments
+- Retrieve transaction status
+- Fetch account balance
 - Connect to Ripple Testnet (default)
 - Easily extendable for custom transactions
+- Extend XAMAN API for XRP accounts
 
 ---
 
@@ -24,10 +25,10 @@ WIP - Work In Progress
 - OkHttp for HTTP client
 - Maven
 - Docker
+- NodeJS for client UI (Todo: replace in-memory state with redis)
 
 ---
 
 ## Configuration
 
 Set the following environment variables or add them to `application.properties`:
-

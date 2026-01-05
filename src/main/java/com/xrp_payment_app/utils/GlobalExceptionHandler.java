@@ -1,6 +1,5 @@
 package com.xrp_payment_app.utils;
 
-import com.xrp_payment_app.dto.ApiErrorResponse;
 import com.xrp_payment_app.dto.ErrorResponse;
 import com.xrp_payment_app.exception.*;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.context.request.WebRequest;
 
 import java.time.Instant;
 import java.util.UUID;

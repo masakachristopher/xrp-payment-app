@@ -20,9 +20,19 @@ spring:
 platform:
   secret: ${XRPL_SENDER_SECRET:sEdTLXdEwVbptCMY8faV3A6o5q7XBhG}
   address: ${XRPL_SENDER_ADDRESS:rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh}
-  sequence_number: ${XRPL_SEQUENCE_NUMBER:9572107}
 
 xrpl:
   testnet:
     ws-url: ${XRPL_TESTNET_WS_URL:wss://s.altnet.rippletest.net:51233}
     http-url: ${XRPL_TESTNET_HTTP_URL:https://s.altnet.rippletest.net:51234/}
+
+xaman:
+  api:
+    key: ${XAMAN_API_KEY:your_xaman_api_key}
+    secret: ${XAMAN_API_SECRET:your_xaman_api_secret}
+    baseUrl: ${XAMAN_API_V1_BASE_URL:https://xaman.com/api/v1/}
+    callback-url: ${XAMAN_CALLBACK_URL:https://yourdomain.com/xaman/callback}
+
+logging:
+  level:
+    reactor.netty.http.client.HttpClient: DEBUG
