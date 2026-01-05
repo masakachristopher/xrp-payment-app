@@ -1,0 +1,629 @@
+{
+	"info": {
+		"_postman_id": "d960d4b0-69e5-4fa7-b7a6-548a53e82815",
+		"name": "XRP Payments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14386097"
+	},
+	"item": [
+		{
+			"name": "SUCCESS v1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1,\n    \"amount\": 2,\n    \"destinationAddress\": \"rP3x6iBbMGtnPcLYS6akjth5cfoHHzAP1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/payments/initiate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payments",
+						"initiate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "SUCCESS",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userId\": 1,\n    \"amount\": 5,\n    \"destinationAddress\": \"rP3x6iBbMGtnPcLYS6akjth5cfoHHzAPe1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/payments/initiate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"payments",
+								"initiate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 08 Aug 2025 21:50:21 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"transactionHash\": \"A012F68C49D3115E732A2392B88DAE3846713CB9D7E7C7B4C60511F1722427E7\",\n    \"message\": \"Payment of 5 XRP sent. Fee kept: 0.2 XRP\"\n}"
+				}
+			]
+		},
+		{
+			"name": "[SUCCESS] - initiate v2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "RequestId",
+						"value": "req00085",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "// rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh\n// rNJWQWQ6utynGgr3tkGJo8DWdZqswjbwtg\n// rJEkNfX1dHiAdTJjapFv5v6yMHUGWdqZzR\n// rUeQN6TXKZyXerCrGc6HVaScUsuvBPAyNS\n{\n    // \"userName\": \"user-dd690a61\",\n    \"amount\": 1,\n    \"senderAddress\": \"rsxbRPExeYhp5XFdwqV47kjRr23ijLpogM\",\n    \"destinationAddress\": \"rP3x6iBbMGtnPcLYS6akjth5cfoHHzAPe1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v2/payments/initiate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"payments",
+						"initiate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "SUCCESS v2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "RequestId",
+								"value": "req00085",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh\n// rNJWQWQ6utynGgr3tkGJo8DWdZqswjbwtg\n// rJEkNfX1dHiAdTJjapFv5v6yMHUGWdqZzR\n// rUeQN6TXKZyXerCrGc6HVaScUsuvBPAyNS\n{\n    // \"userName\": \"user-dd690a61\",\n    \"amount\": 1,\n    \"senderAddress\": \"rsxbRPExeYhp5XFdwqV47kjRr23ijLpogM\",\n    \"destinationAddress\": \"rP3x6iBbMGtnPcLYS6akjth5cfoHHzAPe1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v2/payments/initiate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"payments",
+								"initiate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Jan 2026 10:42:36 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"requestId\": \"req00085\",\n    \"status\": \"PENDING\",\n    \"userUuid\": \"d2a112f4-0df8-484f-8144-d6d429075c85\",\n    \"userRedirectUrl\": \"https://xumm.app/sign/d2a112f4-0df8-484f-8144-d6d429075c85\",\n    \"feeUuid\": null,\n    \"feeRedirectUrl\": null,\n    \"message\": \"Payment is pending user approval via Xaman\"\n}"
+				}
+			]
+		},
+		{
+			"name": "[SUCCESS] - initiate batch v2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "RequestId",
+						"value": "req00083",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "// rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh\n// rNJWQWQ6utynGgr3tkGJo8DWdZqswjbwtg\n// rJEkNfX1dHiAdTJjapFv5v6yMHUGWdqZzR\n// rUeQN6TXKZyXerCrGc6HVaScUsuvBPAyNS\n{\n    // \"userName\": \"user-dd690a61\",\n    \"amount\": 1,\n    \"senderAddress\": \"rsxbRPExeYhp5XFdwqV47kjRr23ijLpogM\",\n    \"destinationAddress\": \"rP3x6iBbMGtnPcLYS6akjth5cfoHHzAPe1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v2/payments/initiate/batch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"payments",
+						"initiate",
+						"batch"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "[SUCCESS] - initiate v2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "RequestId",
+								"value": "req00083",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "// rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh\n// rNJWQWQ6utynGgr3tkGJo8DWdZqswjbwtg\n// rJEkNfX1dHiAdTJjapFv5v6yMHUGWdqZzR\n// rUeQN6TXKZyXerCrGc6HVaScUsuvBPAyNS\n{\n    // \"userName\": \"user-dd690a61\",\n    \"amount\": 1,\n    \"senderAddress\": \"rsxbRPExeYhp5XFdwqV47kjRr23ijLpogM\",\n    \"destinationAddress\": \"rP3x6iBbMGtnPcLYS6akjth5cfoHHzAPe1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v2/payments/initiate/batch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v2",
+								"payments",
+								"initiate",
+								"batch"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 05 Jan 2026 10:41:34 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"requestId\": \"req00083\",\n    \"status\": \"PENDING\",\n    \"userUuid\": \"7084facd-f0d8-426b-8dc3-d6b1d801f494\",\n    \"userRedirectUrl\": \"https://xumm.app/sign/7084facd-f0d8-426b-8dc3-d6b1d801f494\",\n    \"feeUuid\": \"d1adc3d2-5340-4528-919b-e532ae7cc161\",\n    \"feeRedirectUrl\": \"https://xumm.app/sign/d1adc3d2-5340-4528-919b-e532ae7cc161\",\n    \"message\": \"Payment is pending user approval via Xaman\"\n}"
+				}
+			]
+		},
+		{
+			"name": "SUCCESS CALLBACK",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "RequestId",
+						"value": "req0001",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"paymentUuid\": \"d2a112f4-0df8-484f-8144-d6d429075c85\",\n    \"status\": \"SIGNED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v2/payments/callback",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"payments",
+						"callback"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SUCCESS CALLBACK BATCH",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "RequestId",
+						"value": "req0001",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"paymentUuids\": [\n        \"79e9658a-ccb9-40e2-ac44-e13a245dc477\",\n        \"87db2597-a547-4c23-a168-a7f19bc28159\"\n    ],\n    \"status\": \"SIGNED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v2/payments/callback/batch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"payments",
+						"callback",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FAILURE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 1,\n    \"amount\": 2,\n    \"destinationAddress\": \"rP3x6iBbMGtnPcLYS6akjth5cfoHHzAP1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/payments/initiate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"payments",
+						"initiate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CHECK BALANCE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"method\": \"account_info\",\n        \"params\": [{\n          \"account\": \"rP3x6iBbMGtnPcLYS6akjth5cfoHHzAPe1\",\n          \"ledger_index\": \"validated\"\n        }]\n      }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://s.altnet.rippletest.net:51234/",
+					"protocol": "https",
+					"host": [
+						"s",
+						"altnet",
+						"rippletest",
+						"net"
+					],
+					"port": "51234",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "rP3x6iBbMGtnPcLYS6akjth5cfoHHzAPe1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"method\": \"account_info\",\n        \"params\": [{\n          \"account\": \"rP3x6iBbMGtnPcLYS6akjth5cfoHHzAPe1\",\n          \"ledger_index\": \"validated\"\n        }]\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://s.altnet.rippletest.net:51234/",
+							"protocol": "https",
+							"host": [
+								"s",
+								"altnet",
+								"rippletest",
+								"net"
+							],
+							"port": "51234",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 08 Aug 2025 21:57:09 +0000"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "898"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Server",
+							"value": "ripple-json-rpc/rippled-2.5.0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": {\n        \"account_data\": {\n            \"Account\": \"rP3x6iBbMGtnPcLYS6akjth5cfoHHzAPe1\",\n            \"Balance\": \"17000000\",\n            \"Flags\": 0,\n            \"LedgerEntryType\": \"AccountRoot\",\n            \"OwnerCount\": 0,\n            \"PreviousTxnID\": \"A012F68C49D3115E732A2392B88DAE3846713CB9D7E7C7B4C60511F1722427E7\",\n            \"PreviousTxnLgrSeq\": 9588788,\n            \"Sequence\": 9588621,\n            \"index\": \"635E3C537B7266FAAA725B53586698C9DCD1673E7924D9AFDCE4CF970D008997\"\n        },\n        \"account_flags\": {\n            \"allowTrustLineClawback\": false,\n            \"defaultRipple\": false,\n            \"depositAuth\": false,\n            \"disableMasterKey\": false,\n            \"disallowIncomingCheck\": false,\n            \"disallowIncomingNFTokenOffer\": false,\n            \"disallowIncomingPayChan\": false,\n            \"disallowIncomingTrustline\": false,\n            \"disallowIncomingXRP\": false,\n            \"globalFreeze\": false,\n            \"noFreeze\": false,\n            \"passwordSpent\": false,\n            \"requireAuthorization\": false,\n            \"requireDestinationTag\": false\n        },\n        \"ledger_hash\": \"59F02EFF6CA50730E53D18145636424D924FDB29FD653BC13E40286DC52BA176\",\n        \"ledger_index\": 9588917,\n        \"status\": \"success\",\n        \"validated\": true\n    }\n}"
+				},
+				{
+					"name": "rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"method\": \"account_info\",\n        \"params\": [{\n          \"account\": \"rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh\",\n          \"ledger_index\": \"validated\"\n        }]\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://s.altnet.rippletest.net:51234/",
+							"protocol": "https",
+							"host": [
+								"s",
+								"altnet",
+								"rippletest",
+								"net"
+							],
+							"port": "51234",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 08 Aug 2025 21:58:33 +0000"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "953"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Server",
+							"value": "ripple-json-rpc/rippled-2.5.0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": {\n        \"account_data\": {\n            \"Account\": \"rHb9CJAWyB4rj91VRWn96DkukG4bwdtyTh\",\n            \"Balance\": \"90004113510822\",\n            \"Flags\": 1048576,\n            \"LedgerEntryType\": \"AccountRoot\",\n            \"OwnerCount\": 0,\n            \"PreviousTxnID\": \"2149ED46865C5B4ACA763651B88128CF54E6B5526708E7D1007B8ECF104EC5EA\",\n            \"PreviousTxnLgrSeq\": 9581768,\n            \"RegularKey\": \"raEBBs9myX31dF6jaEFUMfUhL6GpAjeeRp\",\n            \"Sequence\": 9,\n            \"index\": \"2B6AC232AA4C4BE41BF49D2459FA4A0347E1B543A4C92FCEE0821C0201E2E9A8\"\n        },\n        \"account_flags\": {\n            \"allowTrustLineClawback\": false,\n            \"defaultRipple\": false,\n            \"depositAuth\": false,\n            \"disableMasterKey\": true,\n            \"disallowIncomingCheck\": false,\n            \"disallowIncomingNFTokenOffer\": false,\n            \"disallowIncomingPayChan\": false,\n            \"disallowIncomingTrustline\": false,\n            \"disallowIncomingXRP\": false,\n            \"globalFreeze\": false,\n            \"noFreeze\": false,\n            \"passwordSpent\": false,\n            \"requireAuthorization\": false,\n            \"requireDestinationTag\": false\n        },\n        \"ledger_hash\": \"879DC966424FC4E00F2B305AA44EDF4B7E35B7D7D629B2D3B7B54950ED768B3A\",\n        \"ledger_index\": 9588942,\n        \"status\": \"success\",\n        \"validated\": true\n    }\n}"
+				},
+				{
+					"name": "rHzQ7FCySRXGmf7woV2wvSLawJTfDbUfSr",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"method\": \"account_info\",\n        \"params\": [{\n          \"account\": \"rHzQ7FCySRXGmf7woV2wvSLawJTfDbUfSr\",\n          \"ledger_index\": \"validated\"\n        }]\n      }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://s.altnet.rippletest.net:51234/",
+							"protocol": "https",
+							"host": [
+								"s",
+								"altnet",
+								"rippletest",
+								"net"
+							],
+							"port": "51234",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 08 Aug 2025 22:07:23 +0000"
+						},
+						{
+							"key": "Connection",
+							"value": "Keep-Alive"
+						},
+						{
+							"key": "Content-Length",
+							"value": "897"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Server",
+							"value": "ripple-json-rpc/rippled-2.5.0"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"result\": {\n        \"account_data\": {\n            \"Account\": \"rHzQ7FCySRXGmf7woV2wvSLawJTfDbUfSr\",\n            \"Balance\": \"2999976\",\n            \"Flags\": 0,\n            \"LedgerEntryType\": \"AccountRoot\",\n            \"OwnerCount\": 0,\n            \"PreviousTxnID\": \"A012F68C49D3115E732A2392B88DAE3846713CB9D7E7C7B4C60511F1722427E7\",\n            \"PreviousTxnLgrSeq\": 9588788,\n            \"Sequence\": 9572109,\n            \"index\": \"CA8AE70A56379369D0DDABDFD862849D7BFB8C8E7C3C06DABE944175FA8BF5D7\"\n        },\n        \"account_flags\": {\n            \"allowTrustLineClawback\": false,\n            \"defaultRipple\": false,\n            \"depositAuth\": false,\n            \"disableMasterKey\": false,\n            \"disallowIncomingCheck\": false,\n            \"disallowIncomingNFTokenOffer\": false,\n            \"disallowIncomingPayChan\": false,\n            \"disallowIncomingTrustline\": false,\n            \"disallowIncomingXRP\": false,\n            \"globalFreeze\": false,\n            \"noFreeze\": false,\n            \"passwordSpent\": false,\n            \"requireAuthorization\": false,\n            \"requireDestinationTag\": false\n        },\n        \"ledger_hash\": \"AC9433F16514F34FB8497BB095126FE3DFC99402B0AACA23A64B5D48AF46B7FC\",\n        \"ledger_index\": 9589110,\n        \"status\": \"success\",\n        \"validated\": true\n    }\n}"
+				}
+			]
+		}
+	]
+}

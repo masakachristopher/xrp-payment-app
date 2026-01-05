@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waiting for Approval</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style> body { font-family: 'Inter', sans-serif; } </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+  <div class="text-center">
+    <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-pink-600 border-opacity-75 mx-auto mb-8"></div>
+    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Waiting for Approval in Xaman</h2>
+    <p class="text-gray-600 max-w-sm mx-auto">
+      Please confirm the fee transaction in your Xaman wallet. We'll redirect you automatically once signed.
+    </p>
+    <p class="text-sm text-gray-500 mt-6">This usually takes a few seconds...</p>
+  </div>
+
+  <script>
+    async function checkStatus() {
+      try {
+        const res = await fetch('/payment/status');
+        const data = await res.json();
+
+        if (data.next === 'USER_SIGN' && data.userRedirectUrl) {
+          window.location.href = data.userRedirectUrl;
+        } else if (data.next === 'DONE') {
+          window.location.href = '/payment/success';
+        }
+      } catch (err) {
+        console.error('Status check failed', err);
+      }
+      setTimeout(checkStatus, 3000);
+    }
+    checkStatus();
+  </script>
+</body>
+</html>

@@ -1,7 +1,6 @@
 package com.xrp_payment_app.entity;
 
 import jakarta.persistence.*;
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
@@ -16,9 +15,6 @@ public class XrpAccount {
 
     @Column(name = "xrp_address", nullable = false, unique = true)
     private String xrpAddress;
-
-    @Column(nullable = false)
-    private BigDecimal balance = BigDecimal.ZERO;
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();
@@ -49,14 +45,6 @@ public class XrpAccount {
 
     public void setXrpAddress(String xrpAddress) {
         this.xrpAddress = xrpAddress;
-    }
-
-    public BigDecimal getBalance() {
-        return balance;
-    }
-
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
     }
 
     public LocalDateTime getCreatedAt() {

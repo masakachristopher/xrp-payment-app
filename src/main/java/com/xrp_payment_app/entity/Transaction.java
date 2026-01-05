@@ -20,8 +20,23 @@ public class Transaction {
     @Column(nullable = false)
     private BigDecimal amount;
 
+    @Column(name = "platform_fee", nullable = true)
+    private BigDecimal platformFee;
+
+    @Column(name = "network_fee", nullable = false)
+    private BigDecimal networkFee;
+
     @Column(name = "transaction_hash", unique = true)
     private String transactionHash;
+
+    @Column(name = "payment_reference", nullable = true)
+    private String paymentReference;
+
+    @Column(name = "payment_type", nullable = true)
+    private String paymentType;
+
+    @Column(name = "request_id", nullable = true)
+    private String requestId;
 
     @Column(nullable = false)
     private String status;
@@ -62,12 +77,52 @@ public class Transaction {
         this.amount = amount;
     }
 
+    public BigDecimal getPlatformFee() {
+        return platformFee;
+    }
+
+    public void setPlatformFee(BigDecimal platformFee) {
+        this.platformFee = platformFee;
+    }
+
+    public BigDecimal getNetworkFee() {
+        return networkFee;
+    }
+
+    public void setNetworkFee(BigDecimal networkFee) {
+        this.networkFee = networkFee;
+    }
+
     public String getTransactionHash() {
         return transactionHash;
     }
 
     public void setTransactionHash(String transactionHash) {
         this.transactionHash = transactionHash;
+    }
+
+    public String getPaymentReference() {
+        return paymentReference;
+    }
+
+    public void setPaymentReference(String paymentReference) {
+        this.paymentReference = paymentReference;
+    }
+
+    public String getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(String paymentType) {
+        this.paymentType = paymentType;
+    }
+
+    public String getRequestId() {
+        return requestId;
+    }
+    
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
     }
 
     public String getStatus() {
