@@ -1,6 +1,6 @@
 class Paths { 
     // static BASE = '/api/v1';
-    static BACKEND_BASE_V2 = 'http://localhost:8080/api/v2';
+    static BACKEND_BASE_V2 = process.env.BACKEND_BASE_V2;
     static PAYMENT_INITIATE = `${Paths.BACKEND_BASE_V2}/payments/initiate`;
     static PAYMENT_INITIATE_BATCH = `${Paths.BACKEND_BASE_V2}/payments/initiate/batch`;
 
